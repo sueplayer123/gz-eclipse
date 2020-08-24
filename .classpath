@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="M:/桌面保存/mysql-connector-java-8.0.21/mysql-connector-java-8.0.21/mysql-connector-java-8.0.21.jar"/>
+	<classpathentry kind="lib" path="M:/BaiduNetdiskDownload/com.questoid.sqlitemanager_1.0.0.jar"/>
+	<classpathentry kind="lib" path="M:/BaiduNetdiskDownload/sqlitegen_eclipse_site_0.1.18(sqlite).jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
