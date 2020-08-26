@@ -7,6 +7,7 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="M:/桌面保存/mysql-connector-java-8.0.21/mysql-connector-java-8.0.21/mysql-connector-java-8.0.21.jar"/>
 	<classpathentry kind="lib" path="M:/BaiduNetdiskDownload/com.questoid.sqlitemanager_1.0.0.jar"/>
-	<classpathentry kind="lib" path="M:/BaiduNetdiskDownload/sqlitegen_eclipse_site_0.1.18(sqlite).jar"/>
+	<classpathentry kind="lib" path="M:/BaiduNetdiskDownload/sqlite-jdbc-3.7.2.jar"/>
+	<classpathentry kind="lib" path="M:/BaiduNetdiskDownload/sqlitejdbc-v056/sqlitejdbc-v056.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
