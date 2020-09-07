@@ -2,12 +2,24 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="M:/桌面保存/mysql-connector-java-8.0.21/mysql-connector-java-8.0.21/mysql-connector-java-8.0.21.jar"/>
 	<classpathentry kind="lib" path="M:/BaiduNetdiskDownload/com.questoid.sqlitemanager_1.0.0.jar"/>
 	<classpathentry kind="lib" path="M:/BaiduNetdiskDownload/sqlite-jdbc-3.7.2.jar"/>
 	<classpathentry kind="lib" path="M:/BaiduNetdiskDownload/sqlitejdbc-v056/sqlitejdbc-v056.jar"/>
+	<classpathentry kind="lib" path="M:/poi/poi/poi-3.15-beta1.jar"/>
+	<classpathentry kind="lib" path="M:/poi/poi/poi-examples-3.15-beta1.jar"/>
+	<classpathentry kind="lib" path="M:/poi/poi/poi-excelant-3.15-beta1.jar"/>
+	<classpathentry kind="lib" path="M:/poi/poi/poi-ooxml-3.15-beta1.jar"/>
+	<classpathentry kind="lib" path="M:/poi/poi/poi-ooxml-schemas-3.15-beta1.jar"/>
+	<classpathentry kind="lib" path="M:/poi/poi/poi-scratchpad-3.15-beta1.jar"/>
+	<classpathentry kind="lib" path="M:/3.3解析ｗｏｒｄ.jar"/>
+	<classpathentry kind="lib" path="M:/junit4.12/junit4.12/hamcrest-core-1.3.RC2.jar"/>
+	<classpathentry kind="lib" path="M:/junit4.12/junit4.12/hamcrest-library-1.3.RC2.jar"/>
+	<classpathentry kind="lib" path="M:/junit4.12/junit4.12/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="M:/junit4.12/junit4.12/system-rules-1.18.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sue/AppData/Local/Android/Sdk/platforms/android-15/android.jar"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

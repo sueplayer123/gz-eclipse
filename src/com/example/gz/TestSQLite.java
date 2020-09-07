@@ -21,7 +21,7 @@ public class TestSQLite {
 	static {
 		try {
 			Class.forName("org.sqlite.JDBC");
-			connect = DriverManager.getConnection("jdbc:sqlite://C:/Users/sue/test123.db");
+			connect = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\sue\\test123.db");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
