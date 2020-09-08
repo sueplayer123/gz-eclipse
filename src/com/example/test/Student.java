@@ -3,7 +3,10 @@ package com.example.test;
 import android.util.Log;
 
 public class Student {
+
 	public void study() {
-		Log.d("sue", "我是超人");
+
+		Log.i("sue", "我是超人");
 	}
+
 }
