@@ -19,7 +19,7 @@
 	<classpathentry kind="lib" path="M:/junit4.12/junit4.12/hamcrest-library-1.3.RC2.jar"/>
 	<classpathentry kind="lib" path="M:/junit4.12/junit4.12/junit-4.12.jar"/>
 	<classpathentry kind="lib" path="M:/junit4.12/junit4.12/system-rules-1.18.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/sue/AppData/Local/Android/Sdk/platforms/android-15/android.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sue/AppData/Local/Android/Sdk/platforms/android-15/android.jar" sourcepath="C:/Users/sue/AppData/Local/Android/Sdk/sources"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="lib" path="M:/ddmlib.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>

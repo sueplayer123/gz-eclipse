@@ -6,7 +6,7 @@ public class Student {
 
 	public void study() {
 
-		Log.i("sue", "我是超人");
+		Log.v("sue", "我是超人");
 	}
 
 }

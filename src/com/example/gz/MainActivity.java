@@ -14,6 +14,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -42,6 +43,12 @@ public class MainActivity extends Activity {
 		button3 = (Button) this.findViewById(R.id.button3);
 		button4 = (Button) this.findViewById(R.id.button4);
 		editText1 = (EditText) this.findViewById(R.id.editText1);
+
+		Log.v("sue", "v");
+		Log.d("sue", "d");
+		Log.i("sue", "i");
+		Log.w("sue", "w");
+		Log.e("sue", "e");
 
 		final String DATABASE_PATH = "data/data/" + this.getPackageName() + "/databases/";
 		String databaseFile = DATABASE_PATH + "testsc123.db";
