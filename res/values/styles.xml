@@ -18,4 +18,8 @@
     </style>
     <style name="ss">40dp</style>
 
+    <style name="styleName" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:maxLines">30</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
 </resources>

@@ -14,7 +14,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -28,7 +27,7 @@ public class MainActivity extends Activity {
 	private Button button3;
 	private Button button4;
 	private EditText editText1;
-
+	SQLiteDatabase database;
 	private static String stString1;
 	private static String stString2;
 	private static String stString3;
@@ -43,17 +42,7 @@ public class MainActivity extends Activity {
 		button3 = (Button) this.findViewById(R.id.button3);
 		button4 = (Button) this.findViewById(R.id.button4);
 		editText1 = (EditText) this.findViewById(R.id.editText1);
-
-		Log.v("sue", "v");
-		Log.d("sue", "d");
-		Log.i("sue", "i");
-		Log.w("sue", "w");
-		Log.e("sue", "e");
-
-		final String DATABASE_PATH = "data/data/" + this.getPackageName() + "/databases/";
-		String databaseFile = DATABASE_PATH + "testsc123.db";
-		getData();
-		final SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(databaseFile, null);
+		database = openDatabase();
 
 		button1.setOnClickListener(new OnClickListener() {
 			@Override
@@ -70,7 +59,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				String sql = "select * from liucheng where liucheng like ?";
 
-				Cursor cursor = db.rawQuery(sql, new String[] { "%" + editText1.getText().toString() + "%" });
+				Cursor cursor = database.rawQuery(sql, new String[] { "%" + editText1.getText().toString() + "%" });
 				while (cursor.moveToNext()) {
 
 					stString1 = cursor.getString(cursor.getColumnIndex("liucheng"));
@@ -88,7 +77,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				String sql = "select * from guzhang where name like ?";
 
-				Cursor cursor = db.rawQuery(sql, new String[] { "%" + editText1.getText().toString() + "%" });
+				Cursor cursor = database.rawQuery(sql, new String[] { "%" + editText1.getText().toString() + "%" });
 				while (cursor.moveToNext()) {
 
 					stString2 = cursor.getString(cursor.getColumnIndex("gzcl"));
@@ -104,15 +93,14 @@ public class MainActivity extends Activity {
 		button4.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				String sql = "select * from casetest where case like ?";
+				Cursor cursor = database.rawQuery(sql, new String[] { "%" + editText1.getText().toString() + "%" });
 
-				Cursor c = db.query(true, "case", new String[] { "id", "case", "content" }, "case like ?",
-						new String[] { "%" + editText1.getText().toString() + "%" }, null, null, null, null);
+				while (cursor.moveToNext()) {
 
-				while (c.moveToNext()) {
-
-					stString3 = c.getString(c.getColumnIndex("content"));
+					stString3 = cursor.getString(cursor.getColumnIndex("content"));
 				}
-				c.close();
+				cursor.close();
 				Intent intent3 = new Intent();
 				intent3.setClass(MainActivity.this, CaseActivity.class);
 				intent3.putExtra("data3", stString3);
@@ -122,34 +110,40 @@ public class MainActivity extends Activity {
 		});
 	}
 
-	private void getData() {
-		final String DATABASE_PATH = "data/data/" + this.getPackageName() + "/databases/";
-		String databaseFile = DATABASE_PATH + "testsc123.db";
-		// 创建databases目录（不存在时）
-		File file = new File(DATABASE_PATH);
-		if (!file.exists()) {
-			file.mkdirs();
+	@Override
+	protected void onDestroy() {
+
+		super.onDestroy();
+		if (!(database == null)) {
+			database.close();
 		}
-		// 判断数据库是否存在
-		if (!new File(databaseFile).exists()) {
-			// 把数据库拷贝到/data/data/<package_name>/databases目录下
-			try {
-				FileOutputStream fileOutputStream = new FileOutputStream(databaseFile);
-				// 数据库放assets目录下
-				InputStream inputStream = getResources().getAssets().open("testsc123.db");
+	}
 
-				byte[] buffer = new byte[1024];
-				int readBytes = 0;
+	private SQLiteDatabase openDatabase() {
 
-				while ((readBytes = inputStream.read(buffer)) != -1)
-					fileOutputStream.write(buffer, 0, readBytes);
+		try {
+			String databasefilename = this.getFilesDir().toString() + "/testsu.db";
+			if (!(new File(databasefilename).exists())) {
+				InputStream is = getResources().openRawResource(R.raw.testsu);
+				FileOutputStream fos = new FileOutputStream(databasefilename);
+				byte[] buffer = new byte[8192];
+				int count = 0;
+				while ((count = is.read(buffer)) > 0)
 
-				inputStream.close();
-				fileOutputStream.close();
-			} catch (IOException e) {
+				{
+					fos.write(buffer, 0, count);
+
+				}
+				fos.close();
+
+				is.close();
 			}
-		}
+			SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(databasefilename, null);
+			return database;
+		} catch (Exception e) {
 
+		}
+		return null;
 	}
 
 	public static String getString(InputStream inputStream) {

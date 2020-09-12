@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class MySqliteopenhelper extends SQLiteOpenHelper {
 
 	public MySqliteopenhelper(Context context, String name, CursorFactory factory, int version) {
-		super(context, "test123.db", null, 1);
+		super(context, name, null, version);
 	}
 
 	@Override
@@ -18,12 +18,7 @@ public class MySqliteopenhelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+		System.out.println("----------onUpdate---------" + oldVersion + "--------" + newVersion);
 	}
 
-	@Override
-	public void onOpen(SQLiteDatabase db) {
-
-		super.onOpen(db);
-	}
 }
